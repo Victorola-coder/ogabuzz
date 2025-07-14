@@ -30,9 +30,7 @@ export default function NotFound() {
 
         <div className="mt-[340px] md:mt-[250px] lg:mt-[400px] text-center mx-auto">
           <div className="flex items-center justify-center space-x-2 mb-4">
-            <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">OB</span>
-            </div>
+            <img src="/images/logo.png" alt="OgaBuzz" width={32} height={32} />
             <span className="text-2xl font-bold text-gray-800">OgaBuzz</span>
           </div>
           <h3 className="text-[23px] font-semibold text-gray-800 mb-2">

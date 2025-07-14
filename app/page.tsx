@@ -29,8 +29,12 @@ export default function Home() {
         </header>
 
         {/* Hero Section */}
-        <section className="px-4 py-12 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto text-center">
+        <section
+          className="px-4 py-12 sm:px-6 lg:px-8 relative bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('/images/overlay.png')" }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-50/80 to-cyan-50/80"></div>
+          <div className="max-w-7xl mx-auto text-center relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -294,9 +298,12 @@ export default function Home() {
         <footer className="px-4 py-12 sm:px-6 lg:px-8 bg-gray-50">
           <div className="max-w-7xl mx-auto text-center">
             <div className="flex items-center justify-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">OB</span>
-              </div>
+              <Image
+                src="/images/logo.png"
+                alt="OgaBuzz"
+                width={32}
+                height={32}
+              />
               <span className="text-2xl font-bold text-gray-800">OgaBuzz</span>
             </div>
             <p className="text-gray-600 text-sm">
