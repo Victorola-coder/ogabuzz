@@ -137,8 +137,14 @@ export default function Home() {
                       <br />
                       From
                     </h3>
-                    <div className="inline-flex items-center space-x-2 bg-[#4A90E2] text-white px-6 py-3 rounded-full">
+                    <div className="flex flex-col w-fit space-x-2 bg-[#229EFF] text-white px-6 py-3 rounded-full">
                       <span className="font-bold text-white">100+ Sources</span>
+                      <Image
+                        src="/images/news.svg"
+                        alt="Arrow"
+                        width={152}
+                        height={50}
+                      />
                     </div>
                   </div>
                   <div className="flex justify-center mt-6">
