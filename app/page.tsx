@@ -132,13 +132,20 @@ export default function Home() {
                   }}
                 >
                   <div className="space-y-4">
-                    <h3 className="text-[32px] font-bold text-black leading-tight">
-                      Daily Headlines
-                      <br />
-                      From
+                    <h3 className="text-[45px] max-w-[349px] font-bold text-black leading-tight">
+                      Daily Headlines From
                     </h3>
-                    <div className="flex flex-col w-fit space-x-2 bg-[#229EFF] text-white px-6 py-3 rounded-full">
-                      <span className="font-bold text-white">100+ Sources</span>
+                    <div
+                      className="flex flex-col w-fit space-x-2 bg-[#229EFF] text-white px-6 py-3"
+                      style={{
+                        borderTopRightRadius: "50px",
+                        borderBottomRightRadius: "50px",
+                        borderBottomLeftRadius: "50px",
+                      }}
+                    >
+                      <span className="font-bold text-[#F7F7F7] text-[31px]">
+                        100+ Sources
+                      </span>
                       <Image
                         src="/images/news.svg"
                         alt="Arrow"
@@ -170,12 +177,10 @@ export default function Home() {
                   }}
                 >
                   <div className="space-y-4">
-                    <h3 className="text-[32px] font-bold text-black leading-tight">
-                      Community
-                      <br />
-                      Updates
+                    <h3 className="text-[45px] max-w-[264px] font-bold text-black leading-tight">
+                      Community Updates
                     </h3>
-                    <p className="text-[16px] text-[#666666] leading-relaxed max-w-sm">
+                    <p className="text-[26px] text-[#969696] leading-relaxed max-w-[583px]">
                       Get Updated On What Is Going On Around Your Location,
                       Thanks To Our Local News Champions
                     </p>
@@ -205,12 +210,10 @@ export default function Home() {
               >
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                   <div className="space-y-4">
-                    <h3 className="text-[32px] font-bold text-black leading-tight">
-                      Earn From Your
-                      <br />
-                      Posts
+                    <h3 className="text-[45px] max-w-[685px] font-bold text-black leading-[140%]">
+                      Earn From Your Posts
                     </h3>
-                    <p className="text-[16px] text-[#666666] leading-relaxed max-w-sm">
+                    <p className="text-[26px] text-[#B7B7B7] leading-[140%]">
                       Monetize Your Posts And Videos Based On Engagements
                     </p>
                   </div>
