@@ -1,438 +1,315 @@
 "use client";
 
+import React from "react";
 import { useState } from "react";
-import {
-  Button,
-  Card,
-  Image,
-  Input,
-  Modal,
-  Otp,
-  Select,
-  Skeleton,
-  Tabs,
-  TextArea,
-  Toggle,
-} from "./components/ui";
+import { Button } from "./components/ui";
 import { motion } from "framer-motion";
-import { EyeIcon } from "./components/svgs";
-import { toast } from "sonner";
-import { Animation, Glow, Loader } from "./components/global";
+import { Animation } from "./components/global";
 
 export default function Home() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [toggleState, setToggleState] = useState(false);
-  const [inputValue, setInputValue] = useState("");
-  const [textAreaValue, setTextAreaValue] = useState("");
-
-  const tabs = [
-    { label: "Overview", value: "overview" },
-    { label: "Components", value: "components" },
-    { label: "Settings", value: "settings" },
-  ];
-
-  const selectOptions = [
-    { label: "Option 1", value: "1" },
-    { label: "Option 2", value: "2" },
-    { label: "Option 3", value: "3" },
-  ];
+  const [isHovered, setIsHovered] = useState(false);
 
   return (
     <Animation>
-      <div className="min-h-screen bg-[#0f0f0f] p-8">
-        <div className="max-w-6xl mx-auto space-y-12">
-          {/* Header */}
-
-          <div className="text-center space-y-6 mb-16">
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.5 }}
-            >
-              <h1 className="text-5xl font-bold text-white font-geistSans">
-                UI Components
-              </h1>
-              <p className="text-[#FFFFFF80] mt-4 max-w-2xl mx-auto">
-                A modern, accessible, and fully-featured component library built
-                with Next.js, Tailwind CSS, and TypeScript
-              </p>
-            </motion.div>
-
-            <div className="flex gap-4 justify-center">
-              <Button
-                variant="primary"
-                onClick={() => toast.success("Copied to clipboard!")}
-              >
-                Get Started
-              </Button>
-              <Button
-                variant="secondary"
-                onClick={() =>
-                  window.open(
-                    "https://github.com/victorola-coder/next-template"
-                  )
-                }
-              >
-                View on GitHub
-              </Button>
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-cyan-50">
+        {/* Header */}
+        <header className="px-4 py-6 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto flex items-center justify-between">
+            <div className="flex items-center space-x-2">
+              <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-sm">OB</span>
+              </div>
+              <span className="text-2xl font-bold text-gray-800">OgaBuzz</span>
             </div>
+            <Button
+              variant="primary"
+              className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-full"
+            >
+              Download Now
+            </Button>
           </div>
+        </header>
 
-          {/* Tabs Navigation */}
-          <Tabs
-            tabs={tabs}
-            defaultValue="components"
-            className="justify-center"
-          />
-
-          {/* Components Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Buttons Section */}
-            <Glow className="p-6 space-y-4">
-              <h2 className="text-xl font-semibold text-white mb-4">Buttons</h2>
-              <div className="flex flex-row flex-wrap gap-4">
-                <Button variant="default">Default Button</Button>
-                <Button variant="primary">Primary Button</Button>
-                <Button variant="secondary">Secondary Button</Button>
-                <Button variant="danger">Danger Button</Button>
-                <Button variant="google">Google Button</Button>
-                <Button loading>Loading Button</Button>
-              </div>
-            </Glow>
-            {/* Loading States */}
-            <Glow className="p-6 space-y-4">
-              <h2 className="text-xl font-semibold text-white mb-4">Loaders</h2>
-              <div className="grid grid-cols-3 gap-4">
-                <div className="flex flex-col items-center gap-2">
-                  <Loader size="small" />
-                  <span className="text-sm text-[#FFFFFF80]">Small</span>
-                </div>
-                <div className="flex flex-col items-center gap-2">
-                  <Loader size="medium" />
-                  <span className="text-sm text-[#FFFFFF80]">Medium</span>
-                </div>
-                <div className="flex flex-col items-center gap-2">
-                  <Loader size="large" />
-                  <span className="text-sm text-[#FFFFFF80]">Large</span>
-                </div>
-              </div>
-            </Glow>
-
-            {/* Icons & SVGs */}
-            <Glow className="p-6 space-y-4">
-              <h2 className="text-xl font-semibold text-white mb-4">
-                Icons & SVGs
-              </h2>
-              <div className="grid grid-cols-4 gap-4">
-                <div className="flex flex-col items-center gap-2">
-                  <EyeIcon className="w-6 h-6" fill="white" />
-                  <span className="text-sm text-[#FFFFFF80]">Eye</span>
-                </div>
-                {/* Add more icons here */}
-              </div>
-            </Glow>
-            {/* Form Inputs Section */}
-            <Glow className="p-6 space-y-4">
-              <h2 className="text-xl font-semibold text-white mb-4">Inputs</h2>
-              <Input
-                placeholder="Regular Input"
-                value={inputValue}
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                  setInputValue(e.target.value)
-                }
-              />
-              <Input
-                type="password"
-                placeholder="Password Input"
-                value={inputValue}
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                  setInputValue(e.target.value)
-                }
-              />
-              <TextArea
-                name="textarea"
-                value={textAreaValue}
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                  setTextAreaValue(e.target.value)
-                }
-                placeholder="Text Area Input"
-              />
-            </Glow>
-
-            {/* Form Validation */}
-            <Glow className="p-6 space-y-4">
-              <h2 className="text-xl font-semibold text-white mb-4">
-                Form Validation
-              </h2>
-              <form
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  toast.success("Form submitted!");
-                }}
-                className="space-y-4"
-              >
-                <Input
-                  placeholder="Email"
-                  type="email"
-                  error="Please enter a valid email"
-                />
-                <Input
-                  placeholder="Password"
-                  type="password"
-                  error="Password is required"
-                />
-                <Button type="submit" className="w-full">
-                  Submit
-                </Button>
-              </form>
-            </Glow>
-
-            {/* Toggle & Select Section */}
-            <Glow className="p-6 space-y-4">
-              <h2 className="text-xl font-semibold text-white mb-4">
-                Interactive Components
-              </h2>
-              <div className="space-y-6">
-                <div className="flex items-center justify-between">
-                  <span className="text-white">Toggle Component</span>
-                  <Toggle checked={toggleState} onChange={setToggleState} />
-                </div>
-                <Select
-                  options={selectOptions}
-                  placeholder="Select an option"
-                  onChange={(value) => console.log(value)}
-                />
-              </div>
-            </Glow>
-            {/* Animations */}
-            <Glow className="p-6 space-y-4">
-              <h2 className="text-xl font-semibold text-white mb-4">
-                Animations
-              </h2>
+        {/* Hero Section */}
+        <section className="px-4 py-12 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="space-y-8"
+            >
               <div className="space-y-4">
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-[#283142] p-4 rounded-lg text-white text-center"
-                >
-                  Hover & Tap Animation
-                </motion.div>
-                <motion.div
-                  animate={{
-                    y: [0, -10, 0],
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                  }}
-                  className="bg-[#283142] p-4 rounded-lg text-white text-center"
-                >
-                  Floating Animation
-                </motion.div>
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900">
+                  Stay Informed
+                </h1>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-700">
+                  Stay Ahead With OgaBuzz
+                </h2>
               </div>
-            </Glow>
-            {/* Color Palette */}
-            <Glow className="p-6 space-y-4">
-              <h2 className="text-xl font-semibold text-white mb-4">
-                Color Palette
-              </h2>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <div className="h-12 rounded-lg bg-primary" />
-                  <span className="text-sm text-[#FFFFFF80]">Primary</span>
-                </div>
-                <div className="space-y-2">
-                  <div className="h-12 rounded-lg bg-[#283142]" />
-                  <span className="text-sm text-[#FFFFFF80]">Secondary</span>
-                </div>
-                <div className="space-y-2">
-                  <div className="h-12 rounded-lg bg-[#6366F1]" />
-                  <span className="text-sm text-[#FFFFFF80]">Accent</span>
-                </div>
-                <div className="space-y-2">
-                  <div className="h-12 rounded-lg bg-[#DC2626]" />
-                  <span className="text-sm text-[#FFFFFF80]">Danger</span>
-                </div>
+
+              <div className="space-y-4 max-w-4xl mx-auto">
+                <p className="text-lg sm:text-xl text-gray-600 font-medium">
+                  OgaBuzz Is The First News App Built For You
+                </p>
+                <p className="text-sm sm:text-base text-gray-500 max-w-2xl mx-auto">
+                  Personalized Headlines And Real-Time Local Reporting, Powered
+                  By AI And Your Location
+                </p>
               </div>
-            </Glow>
 
-            {/* Card & Image Section */}
-            <Glow className="p-6 space-y-4">
-              <h2 className="text-xl font-semibold text-white mb-4">
-                Display Components
-              </h2>
-              <Card>
-                <div className="bg-[#283142] p-4 rounded-lg">
-                  <Image
-                    src="/images/logo.svg"
-                    alt="Placeholder"
-                    width={300}
-                    height={200}
-                    className="rounded-lg"
-                  />
-                </div>
-              </Card>
-            </Glow>
-
-            {/* Loading States Section */}
-            <Glow className="p-6 space-y-4">
-              <h2 className="text-xl font-semibold text-white mb-4">
-                Loading States
-              </h2>
-              <div className="space-y-4">
-                <Skeleton className="h-12 w-full" />
-                <Skeleton className="h-12 w-3/4" />
-                <Skeleton className="h-12 w-1/2" />
-              </div>
-            </Glow>
-
-            {/* Modal & OTP Section */}
-            <Glow className="p-6 space-y-4">
-              <h2 className="text-xl font-semibold text-white mb-4">
-                Advanced Components
-              </h2>
-              <div className="space-y-4">
-                <Button onClick={() => setIsModalOpen(true)}>Open Modal</Button>
-                <div className="mt-8">
-                  <h3 className="text-white mb-4">OTP Input</h3>
-                  <Otp />
-                </div>
-              </div>
-            </Glow>
-
-            {/* Toast Notifications */}
-            <Glow className="p-6 space-y-4">
-              <h2 className="text-xl font-semibold text-white mb-4">
-                Toast Notifications
-              </h2>
-              <div className="grid grid-cols-2 gap-4">
-                <Button
-                  variant="default"
-                  onClick={() => toast.success("Success message")}
-                >
-                  Success Toast
-                </Button>
-                <Button
-                  variant="danger"
-                  onClick={() => toast.error("Error message")}
-                >
-                  Error Toast
-                </Button>
+              {/* Download Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6">
                 <Button
                   variant="primary"
-                  onClick={() => toast.info("Info message")}
+                  className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-full text-lg font-medium flex items-center space-x-2 w-full sm:w-auto"
                 >
-                  Info Toast
+                  <span>📱</span>
+                  <span>Download for iPhone</span>
                 </Button>
                 <Button
                   variant="secondary"
-                  onClick={() => toast.warning("Warning message")}
+                  className="border-2 border-blue-500 text-blue-500 hover:bg-blue-50 px-8 py-3 rounded-full text-lg font-medium flex items-center space-x-2 w-full sm:w-auto"
                 >
-                  Warning Toast
+                  <span>🤖</span>
+                  <span>Download For Android</span>
                 </Button>
               </div>
-            </Glow>
 
-            {/* Typography */}
-            <Glow className="p-6 space-y-4">
-              <h2 className="text-xl font-semibold text-white mb-4">
-                Typography
-              </h2>
-              <div className="space-y-6">
-                <div>
-                  <h1 className="text-4xl font-geistSans font-bold text-white">
-                    Heading 1
-                  </h1>
-                  <p className="text-[#FFFFFF80] text-sm">
-                    Font: Geist Sans Bold - 36px
-                  </p>
+              {/* Phone Mockup */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="pt-12"
+              >
+                <div className="relative mx-auto w-72 h-96 bg-gray-900 rounded-3xl p-2 shadow-2xl">
+                  <div className="w-full h-full bg-white rounded-2xl overflow-hidden">
+                    <div className="h-full bg-gradient-to-b from-blue-50 to-white p-4">
+                      <div className="space-y-3">
+                        <div className="flex items-center space-x-2">
+                          <div className="w-6 h-6 bg-blue-500 rounded-full"></div>
+                          <span className="text-sm font-medium">OgaBuzz</span>
+                        </div>
+                        <div className="space-y-2">
+                          <div className="h-16 bg-white rounded-lg shadow-sm p-3">
+                            <div className="flex space-x-2">
+                              <div className="w-10 h-10 bg-gray-200 rounded"></div>
+                              <div className="flex-1">
+                                <div className="h-2 bg-gray-200 rounded mb-1"></div>
+                                <div className="h-2 bg-gray-100 rounded w-3/4"></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="h-16 bg-white rounded-lg shadow-sm p-3">
+                            <div className="flex space-x-2">
+                              <div className="w-10 h-10 bg-gray-200 rounded"></div>
+                              <div className="flex-1">
+                                <div className="h-2 bg-gray-200 rounded mb-1"></div>
+                                <div className="h-2 bg-gray-100 rounded w-2/3"></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="h-16 bg-white rounded-lg shadow-sm p-3">
+                            <div className="flex space-x-2">
+                              <div className="w-10 h-10 bg-gray-200 rounded"></div>
+                              <div className="flex-1">
+                                <div className="h-2 bg-gray-200 rounded mb-1"></div>
+                                <div className="h-2 bg-gray-100 rounded w-4/5"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <h2 className="text-3xl font-geistSans font-semibold text-white">
-                    Heading 2
-                  </h2>
-                  <p className="text-[#FFFFFF80] text-sm">
-                    Font: Geist Sans Semibold - 30px
-                  </p>
-                </div>
-                <div>
-                  <p className="text-base font-geistSans text-white">
-                    Regular paragraph text with Geist Sans
-                  </p>
-                  <p className="text-[#FFFFFF80] text-sm">
-                    Font: Geist Sans Regular - 16px
-                  </p>
-                </div>
-                <div>
-                  <p className="font-geistMono text-white">
-                    Monospace text with Geist Mono
-                  </p>
-                  <p className="text-[#FFFFFF80] text-sm">
-                    Font: Geist Mono - 16px
-                  </p>
-                </div>
-              </div>
-            </Glow>
-
-            {/* Gradients */}
-            <Glow className="p-6 space-y-4">
-              <h2 className="text-xl font-semibold text-white mb-4">
-                Gradients
-              </h2>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <div className="h-20 rounded-lg bg-gradient-to-r from-primary to-[#6366F1]" />
-                  <span className="text-sm text-[#FFFFFF80]">
-                    Primary Gradient
-                  </span>
-                </div>
-                <div className="space-y-2">
-                  <div className="h-20 rounded-lg bg-gradient-to-r from-[#DC2626] to-[#EA580C]" />
-                  <span className="text-sm text-[#FFFFFF80]">
-                    Danger Gradient
-                  </span>
-                </div>
-                <div className="space-y-2">
-                  <div className="h-20 rounded-lg bg-gradient-to-r from-[#283142] to-[#1A202B]" />
-                  <span className="text-sm text-[#FFFFFF80]">
-                    Background Gradient
-                  </span>
-                </div>
-                <div className="space-y-2">
-                  <div className="h-20 rounded-lg bg-gradient-to-r from-[#059669] to-[#10B981]" />
-                  <span className="text-sm text-[#FFFFFF80]">
-                    Success Gradient
-                  </span>
-                </div>
-              </div>
-            </Glow>
+              </motion.div>
+            </motion.div>
           </div>
-        </div>
+        </section>
 
-        {/* Modal */}
-        <Modal
-          isOpen={isModalOpen}
-          onClose={() => setIsModalOpen(false)}
-          title="Modal Example"
-        >
-          <div className="space-y-4">
-            <p className="text-white">
-              This is an example modal that showcases the Modal component.
-            </p>
-            <Button
-              variant="primary"
-              onClick={() => setIsModalOpen(false)}
-              className="w-full"
+        {/* Categories Section */}
+        <section className="px-4 py-16 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="space-y-6"
             >
-              Close Modal
-            </Button>
+              <p className="text-lg text-gray-600">We Cover All Categories</p>
+              <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-400 italic">
+                Sports. Politics. Entertainments.
+              </h3>
+            </motion.div>
           </div>
-        </Modal>
+        </section>
+
+        {/* Features Section */}
+        <section className="px-4 py-16 sm:px-6 lg:px-8 bg-white">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8">
+                Our Features
+              </h2>
+            </motion.div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+              {/* Feature 1: Daily Headlines */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+                className="text-center space-y-6"
+              >
+                <div className="space-y-2">
+                  <h3 className="text-xl font-bold text-gray-900">
+                    Daily Headlines
+                  </h3>
+                  <h4 className="text-xl font-bold text-gray-900">From</h4>
+                  <div className="inline-flex items-center space-x-2 bg-blue-500 text-white px-4 py-2 rounded-full">
+                    <span className="font-bold">100+ Sources</span>
+                  </div>
+                </div>
+                <div className="mx-auto w-64 h-80 bg-gray-900 rounded-3xl p-2 shadow-xl">
+                  <div className="w-full h-full bg-white rounded-2xl overflow-hidden">
+                    <div className="h-full bg-gradient-to-b from-blue-50 to-white p-4">
+                      <div className="space-y-3">
+                        <div className="text-xs font-medium text-gray-600">
+                          Top Headlines
+                        </div>
+                        <div className="space-y-2">
+                          {[1, 2, 3, 4].map((i) => (
+                            <div
+                              key={i}
+                              className="bg-white rounded-lg shadow-sm p-3"
+                            >
+                              <div className="flex space-x-2">
+                                <div className="w-8 h-8 bg-red-500 rounded flex items-center justify-center">
+                                  <span className="text-white text-xs">📰</span>
+                                </div>
+                                <div className="flex-1">
+                                  <div className="h-2 bg-gray-200 rounded mb-1"></div>
+                                  <div className="h-2 bg-gray-100 rounded w-3/4"></div>
+                                </div>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Feature 2: Community Updates */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1.0 }}
+                className="text-center space-y-6"
+              >
+                <div className="space-y-2">
+                  <h3 className="text-xl font-bold text-gray-900">Community</h3>
+                  <h4 className="text-xl font-bold text-gray-900">Updates</h4>
+                  <p className="text-sm text-gray-600 max-w-sm mx-auto">
+                    Get Updated On What Is Going On Around Your Location, Thanks
+                    To Our Local News Champions
+                  </p>
+                </div>
+                <div className="mx-auto w-64 h-80 bg-gray-900 rounded-3xl p-2 shadow-xl">
+                  <div className="w-full h-full bg-white rounded-2xl overflow-hidden">
+                    <div className="h-full bg-gradient-to-b from-green-50 to-white p-4">
+                      <div className="space-y-3">
+                        <div className="text-xs font-medium text-gray-600">
+                          Local News
+                        </div>
+                        <div className="bg-white rounded-lg shadow-sm p-3">
+                          <div className="h-24 bg-gradient-to-r from-orange-200 to-yellow-200 rounded mb-2"></div>
+                          <div className="space-y-1">
+                            <div className="h-2 bg-gray-200 rounded"></div>
+                            <div className="h-2 bg-gray-100 rounded w-2/3"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Feature 3: Earn From Posts */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1.2 }}
+                className="text-center space-y-6"
+              >
+                <div className="space-y-2">
+                  <h3 className="text-xl font-bold text-gray-900">
+                    Earn From Your
+                  </h3>
+                  <h4 className="text-xl font-bold text-gray-900">Posts</h4>
+                  <p className="text-sm text-gray-600 max-w-sm mx-auto">
+                    Monetize Your Posts And Videos Based On Engagements
+                  </p>
+                </div>
+                <div className="mx-auto w-64 h-80 bg-gray-900 rounded-3xl p-2 shadow-xl">
+                  <div className="w-full h-full bg-white rounded-2xl overflow-hidden">
+                    <div className="h-full bg-gradient-to-b from-green-50 to-white p-4">
+                      <div className="space-y-3">
+                        <div className="text-xs font-medium text-gray-600">
+                          Earnings
+                        </div>
+                        <div className="bg-white rounded-lg shadow-sm p-4">
+                          <div className="text-2xl font-bold text-green-600">
+                            ₦54,090.23
+                          </div>
+                          <div className="text-xs text-gray-500">
+                            Total Weekly Earnings
+                          </div>
+                        </div>
+                        <div className="bg-white rounded-lg shadow-sm p-3">
+                          <div className="text-sm font-medium text-gray-700">
+                            Engagements In The Last 1 Month
+                          </div>
+                          <div className="text-lg font-bold text-blue-600">
+                            4,090
+                          </div>
+                          <div className="h-8 bg-gradient-to-r from-blue-200 to-green-200 rounded mt-2"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Footer */}
+        <footer className="px-4 py-12 sm:px-6 lg:px-8 bg-gray-50">
+          <div className="max-w-7xl mx-auto text-center">
+            <div className="flex items-center justify-center space-x-2 mb-4">
+              <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-sm">OB</span>
+              </div>
+              <span className="text-2xl font-bold text-gray-800">OgaBuzz</span>
+            </div>
+            <p className="text-gray-600 text-sm">
+              © {new Date().getFullYear()} OgaBuzz. All rights reserved.
+            </p>
+            <p className="text-gray-500 text-xs mt-2">
+              Stay Informed, Stay Ahead
+            </p>
+          </div>
+        </footer>
       </div>
-      <footer className="mt-16 text-center text-[#FFFFFF80]">
-        <p>Built with Next.js, Tailwind CSS, and TypeScript</p>
-        <p className="mt-2">© {new Date().getFullYear()} Victorola</p>
-      </footer>
     </Animation>
   );
 }

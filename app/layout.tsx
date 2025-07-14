@@ -1,25 +1,13 @@
 import "./global.css";
 import { Toaster } from "sonner";
-import localFont from "next/font/local";
 import { AOS } from "./components/global";
-import { Montserrat } from "next/font/google";
+import { Open_Sans } from "next/font/google";
 import type { Metadata, Viewport } from "next";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
-
-const montserrat = Montserrat({
+const opensans = Open_Sans({
   subsets: ["latin"],
-  variable: "--font-montserrat",
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-opensans",
+  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
 export const viewport: Viewport = {
@@ -27,18 +15,28 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://nextapptemplate.xyz"),
+  metadataBase: new URL("https://ogabuzz.com"),
   icons: {
     icon: "/icon.png",
   },
-  title: "nextjs template",
+  title: "OgaBuzz - Stay Informed, Stay Ahead",
   description:
-    "I fell in love with next.js, im trying to make a template for it also",
-  applicationName: "next Web Application",
-  authors: [{ name: "nextapp template", url: "https://domainname.host" }],
-  keywords: ["NextJs", "reactjs", "template", "typescript"],
-  creator: "VickyJay",
-  publisher: "VickyJay",
+    "The First News App Built For You. Personalized Headlines And Real-Time Local Reporting, Powered By AI And Your Location. Cover Sports, Politics, Entertainment and more.",
+  applicationName: "OgaBuzz News App",
+  authors: [{ name: "OgaBuzz Team", url: "https://ogabuzz.com" }],
+  keywords: [
+    "news",
+    "headlines",
+    "local news",
+    "sports",
+    "politics",
+    "entertainment",
+    "AI powered",
+    "real-time",
+    "community updates",
+  ],
+  creator: "OgaBuzz Team",
+  publisher: "OgaBuzz",
   generator: "Next.js",
   referrer: "origin",
   robots: {
@@ -47,41 +45,40 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    url: "https://domainname.host",
-    title: "Nextjs template",
-    siteName: "nextapp template",
+    url: "https://ogabuzz.com",
+    title: "OgaBuzz - The First News App Built For You",
+    siteName: "OgaBuzz",
     locale: "en_US",
     images: [
       {
-        url: "linktoopengraphimage.cdn",
+        url: "https://ogabuzz.com/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "next OG Image",
+        alt: "OgaBuzz - Stay Informed, Stay Ahead",
       },
     ],
   },
   twitter: {
-    site: "nextapp",
-    creator: "socialmediahandle",
-    title:
-      "nextapp template - I fell in love with next.js, im trying to make a template for it tooo",
+    site: "@ogabuzz",
+    creator: "@ogabuzz",
+    title: "OgaBuzz - Stay Informed, Stay Ahead With Personalized News",
     description:
-      "I fell in love with next.js, im trying to make a template for it too",
+      "The First News App Built For You. Personalized Headlines And Real-Time Local Reporting, Powered By AI And Your Location.",
     card: "summary_large_image",
-    images: ["linktoopengraph.com"],
+    images: ["https://ogabuzz.com/og-image.jpg"],
   },
   appleWebApp: {
     capable: true,
-    title: "nextapp template",
+    title: "OgaBuzz",
     statusBarStyle: "black-translucent",
   },
   formatDetection: {
     telephone: false,
   },
   abstract:
-    "I fell in love with next.js, im trying to make a template for it tooo",
-  category: "Social",
-  classification: "Social",
+    "OgaBuzz is the first news app built for you, featuring personalized headlines and real-time local reporting powered by AI and your location. Stay informed with daily headlines from 100+ sources, community updates, and earn from your posts.",
+  category: "News",
+  classification: "News & Media",
 };
 
 export default function RootLayout({
@@ -91,9 +88,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${montserrat.className} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${opensans.className} antialiased`}>
         <Toaster richColors />
         <AOS />
         {children}
