@@ -17,7 +17,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://ogabuzz.com"),
   icons: {
-    icon: "/icon.png",
+    icon: "/images/logo.png",
   },
   title: "OgaBuzz - Stay Informed, Stay Ahead",
   description:
