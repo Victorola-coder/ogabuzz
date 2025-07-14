@@ -104,6 +104,115 @@ export default function Home() {
 
         {/* Features Section */}
 
+        <section className="px-4 py-16 sm:px-6 lg:px-8 bg-white">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="text-center mb-16"
+            >
+              <h4 className="capitalize text-[#969696] text-[26px] font-normal text-center leading-[140%]">
+                our features
+              </h4>
+            </motion.div>
+
+            <div className="space-y-8 max-w-6xl mx-auto">
+              {/* First Row: Daily Headlines + Community Updates */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                {/* Feature 1: Daily Headlines */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.8 }}
+                  className="bg-cover bg-center bg-no-repeat p-8 rounded-lg"
+                  style={{ backgroundImage: "url('/images/pattern.png')" }}
+                >
+                  <div className="space-y-4">
+                    <h3 className="text-[32px] font-bold text-black leading-tight">
+                      Daily Headlines
+                      <br />
+                      From
+                    </h3>
+                    <div className="inline-flex items-center space-x-2 bg-[#4A90E2] text-white px-6 py-3 rounded-full">
+                      <span className="font-bold text-white">100+ Sources</span>
+                    </div>
+                  </div>
+                  <div className="flex justify-center mt-6">
+                    <Image
+                      src="/images/headline.svg"
+                      alt="Daily Headlines Feature"
+                      width={350}
+                      height={450}
+                      className="max-w-full h-auto"
+                    />
+                  </div>
+                </motion.div>
+
+                {/* Feature 2: Community Updates */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 1.0 }}
+                  className="bg-cover bg-center bg-no-repeat p-8 rounded-lg"
+                  style={{ backgroundImage: "url('/images/pattern.png')" }}
+                >
+                  <div className="space-y-4">
+                    <h3 className="text-[32px] font-bold text-black leading-tight">
+                      Community
+                      <br />
+                      Updates
+                    </h3>
+                    <p className="text-[16px] text-[#666666] leading-relaxed max-w-sm">
+                      Get Updated On What Is Going On Around Your Location,
+                      Thanks To Our Local News Champions
+                    </p>
+                  </div>
+                  <div className="flex justify-center mt-6">
+                    <Image
+                      src="/images/update.svg"
+                      alt="Community Updates Feature"
+                      width={350}
+                      height={450}
+                      className="max-w-full h-auto"
+                    />
+                  </div>
+                </motion.div>
+              </div>
+
+              {/* Second Row: Earn From Posts - Full Width */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1.2 }}
+                className="bg-cover bg-center bg-no-repeat p-8 rounded-lg"
+                style={{ backgroundImage: "url('/images/pattern.png')" }}
+              >
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                  <div className="space-y-4">
+                    <h3 className="text-[32px] font-bold text-black leading-tight">
+                      Earn From Your
+                      <br />
+                      Posts
+                    </h3>
+                    <p className="text-[16px] text-[#666666] leading-relaxed max-w-sm">
+                      Monetize Your Posts And Videos Based On Engagements
+                    </p>
+                  </div>
+                  <div className="flex justify-center">
+                    <Image
+                      src="/images/earning.svg"
+                      alt="Earn From Posts Feature"
+                      width={350}
+                      height={450}
+                      className="max-w-full h-auto"
+                    />
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
         {/* Footer */}
         <footer className="px-4 py-12 sm:px-6 lg:px-8 bg-gray-50">
           <div className="max-w-7xl mx-auto text-center">
