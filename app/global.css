@@ -10,8 +10,8 @@
 }
 
 body {
-  color: white;
-  background-color: #0f0f0f;
+  /* color: white; */
+  /* background-color: #0f0f0f; */
   overflow-x: hidden;
 }
 
@@ -69,6 +69,3 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
-
-
-

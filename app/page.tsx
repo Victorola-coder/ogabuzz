@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Button, Image } from "./components/ui";
 import { motion } from "framer-motion";
 import { Animation } from "./components/global";
+import { AppleIcon, GoogleIcon } from "./components/svgs";
 
 export default function Home() {
   return (
@@ -19,18 +20,15 @@ export default function Home() {
               width={64}
               height={64}
             />
-            <Button
-              variant="primary"
-              className="border-primary text-white px-6 py-2 rounded-full"
-            >
+            <button className="border-primary bg-none border rounded-[30px] text-[#229EFF] px-[40px] py-[20px] text-[15px] font-normal ">
               Download Now
-            </Button>
+            </button>
           </div>
         </header>
 
         {/* Hero Section */}
         <section
-          className="px-4 py-12 sm:px-6 lg:px-8 relative bg-cover bg-center bg-no-repeat"
+          className="px-4 pt-12 sm:px-6 lg:px-8 relative bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: "url('/images/overlay.png')" }}
         >
           <div className="absolute inset-0 bg-gradient-to-br from-blue-50/80 to-cyan-50/80"></div>
@@ -42,110 +40,60 @@ export default function Home() {
               className="space-y-8"
             >
               <div className="space-y-4">
-                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[64px] leading-[140%] font-normal italic text-[#1A1A1A]">
                   Stay Informed
                 </h1>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-700">
-                  Stay Ahead With OgaBuzz
+                <h2 className="text-3xl italic sm:text-4xl md:text-5xl lg:text-6xl font-normal text-[#1A1A1A]">
+                  Stay Ahead With{" "}
+                  <span className="text-[#1A1A1A] italic">OgaBuzz</span>
                 </h2>
               </div>
 
-              <div className="space-y-4 max-w-4xl mx-auto">
-                <p className="text-lg sm:text-xl text-gray-600 font-medium">
-                  OgaBuzz Is The First News App Built For You
-                </p>
-                <p className="text-sm sm:text-base text-gray-500 max-w-2xl mx-auto">
-                  Personalized Headlines And Real-Time Local Reporting, Powered
-                  By AI And Your Location
-                </p>
-              </div>
+              <p className="text-[26px] max-w-[1074px] mx-auto  text-center capitalizeleading-[140%] font-normal text-[#969696]">
+                ogaBuzz is the first news app built for you - personalized
+                headlines and real-time local reporting, powered by ai and your
+                location
+              </p>
 
               {/* Download Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6">
-                <Button
-                  variant="primary"
-                  className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-full text-lg font-medium flex items-center space-x-2 w-full sm:w-auto"
-                >
-                  <span>📱</span>
+                <button className="bg-primary bg-none border rounded-[30px] text-white px-[40px] py-[20px] text-[15px] font-normal flex items-center space-x-2 w-full sm:w-auto">
+                  <AppleIcon />
                   <span>Download for iPhone</span>
-                </Button>
-                <Button
-                  variant="secondary"
-                  className="border-2 border-blue-500 text-blue-500 hover:bg-blue-50 px-8 py-3 rounded-full text-lg font-medium flex items-center space-x-2 w-full sm:w-auto"
-                >
-                  <span>🤖</span>
+                </button>
+                <button className="border-primary bg-none border rounded-[30px] text-[#1A1A1A] px-[40px] py-[20px] text-[15px] font-normal flex items-center space-x-2 w-full sm:w-auto">
+                  <GoogleIcon />
                   <span>Download For Android</span>
-                </Button>
+                </button>
               </div>
 
               {/* Phone Mockup */}
-              <motion.div
+              <motion.figure
+                className="flex justify-center items-center"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="pt-12"
               >
-                <div className="relative mx-auto w-72 h-96 bg-gray-900 rounded-3xl p-2 shadow-2xl">
-                  <div className="w-full h-full bg-white rounded-2xl overflow-hidden">
-                    <div className="h-full bg-gradient-to-b from-blue-50 to-white p-4">
-                      <div className="space-y-3">
-                        <div className="flex items-center space-x-2">
-                          <div className="w-6 h-6 bg-blue-500 rounded-full"></div>
-                          <span className="text-sm font-medium">OgaBuzz</span>
-                        </div>
-                        <div className="space-y-2">
-                          <div className="h-16 bg-white rounded-lg shadow-sm p-3">
-                            <div className="flex space-x-2">
-                              <div className="w-10 h-10 bg-gray-200 rounded"></div>
-                              <div className="flex-1">
-                                <div className="h-2 bg-gray-200 rounded mb-1"></div>
-                                <div className="h-2 bg-gray-100 rounded w-3/4"></div>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="h-16 bg-white rounded-lg shadow-sm p-3">
-                            <div className="flex space-x-2">
-                              <div className="w-10 h-10 bg-gray-200 rounded"></div>
-                              <div className="flex-1">
-                                <div className="h-2 bg-gray-200 rounded mb-1"></div>
-                                <div className="h-2 bg-gray-100 rounded w-2/3"></div>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="h-16 bg-white rounded-lg shadow-sm p-3">
-                            <div className="flex space-x-2">
-                              <div className="w-10 h-10 bg-gray-200 rounded"></div>
-                              <div className="flex-1">
-                                <div className="h-2 bg-gray-200 rounded mb-1"></div>
-                                <div className="h-2 bg-gray-100 rounded w-4/5"></div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
+                <Image
+                  src="/images/hero.png"
+                  alt="OgaBuzz"
+                  width={729}
+                  height={675}
+                />
+              </motion.figure>
             </motion.div>
           </div>
         </section>
 
         {/* Categories Section */}
-        <section className="px-4 py-16 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="space-y-6"
-            >
-              <p className="text-lg text-gray-600">We Cover All Categories</p>
-              <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-400 italic">
-                Sports. Politics. Entertainments.
-              </h3>
-            </motion.div>
-          </div>
+
+        <section className="px-4 relative pt-[54px] pb-[28px] bg-[#F7F7F7] mx-[144px] flex flex-col items-center justify-center rounded-[30px]">
+          <h4 className="text-[#969696] text-[15px] font-normal text-center leading-[140%]">
+            we cover all categories
+          </h4>
+          <h2 className="text-[#B7B7B7] text-[70px] leading-[140%] capitalize italic text-center font-normal">
+            Sports. Politics. Entertainments.
+          </h2>
         </section>
 
         {/* Features Section */}
