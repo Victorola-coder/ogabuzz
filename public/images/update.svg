@@ -1,5 +1,5 @@
 <svg width="425" height="440" viewBox="0 0 425 440" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g clip-path="url(#clip0_1279_2556)">
+<g clipPath="url(#clip0_1279_2556)">
 <g filter="url(#filter0_i_1279_2556)">
 <rect x="3" width="419" height="856" rx="62" fill="#E6E6E6"/>
 </g>
@@ -17,7 +17,7 @@
 <g filter="url(#filter4_i_1279_2556)">
 <path d="M422 220H423.4C423.96 220 424.24 220 424.454 220.109C424.642 220.205 424.795 220.358 424.891 220.546C425 220.76 425 221.04 425 221.6V318.4C425 318.96 425 319.24 424.891 319.454C424.795 319.642 424.642 319.795 424.454 319.891C424.24 320 423.96 320 423.4 320H422V220Z" fill="#CCCCCC"/>
 </g>
-<g clip-path="url(#clip1_1279_2556)">
+<g clipPath="url(#clip1_1279_2556)">
 <rect x="24.4668" y="21.7013" width="375" height="812" rx="40" fill="white"/>
 <rect x="19.4668" y="21.7013" width="386" height="1736" fill="url(#pattern0_1279_2556)"/>
 </g>

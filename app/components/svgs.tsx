@@ -65,7 +65,7 @@ export const AppleIcon = ({ className, fill }: SVGProps) => {
         fill="#F7F7F7"
         stroke="#F7F7F7"
         strokeWidth="2"
-        stroke-linejoin="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
@@ -81,7 +81,7 @@ export const GoogleIcon = ({ className, fill }: SVGProps) => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clip-path="url(#clip0_1264_2395)">
+      <g clipPath="url(#clip0_1264_2395)">
         <path
           d="M10.2743 11.4416L0.0913086 21.9698C0.205663 22.3697 0.41116 22.7386 0.692093 23.0481C0.973026 23.3576 1.32196 23.5997 1.71221 23.7557C2.10246 23.9118 2.52371 23.9777 2.94375 23.9485C3.36378 23.9193 3.77149 23.7957 4.1357 23.5872L15.5935 17.1475L10.2743 11.4416Z"
           fill="#EA4335"

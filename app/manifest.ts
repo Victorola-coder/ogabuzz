@@ -13,7 +13,7 @@ export default function manifest(): MetadataRoute.Manifest {
     categories: ["news", "entertainment", "sports", "politics"],
     icons: [
       {
-        src: "/favicon.ico",
+        src: "/images/logo.png",
         sizes: "any",
         type: "image/x-icon",
       },
