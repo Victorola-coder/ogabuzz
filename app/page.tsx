@@ -2,28 +2,26 @@
 
 import React from "react";
 import { useState } from "react";
-import { Button } from "./components/ui";
+import { Button, Image } from "./components/ui";
 import { motion } from "framer-motion";
 import { Animation } from "./components/global";
 
 export default function Home() {
-  const [isHovered, setIsHovered] = useState(false);
-
   return (
     <Animation>
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-cyan-50">
         {/* Header */}
         <header className="px-4 py-6 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto flex items-center justify-between">
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">OB</span>
-              </div>
-              <span className="text-2xl font-bold text-gray-800">OgaBuzz</span>
-            </div>
+            <Image
+              src="/images/logo.png"
+              alt="OgaBuzz"
+              width={64}
+              height={64}
+            />
             <Button
               variant="primary"
-              className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-full"
+              className="border-primary text-white px-6 py-2 rounded-full"
             >
               Download Now
             </Button>
