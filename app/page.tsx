@@ -125,8 +125,11 @@ export default function Home() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.8 }}
-                  className="bg-cover bg-center bg-no-repeat p-8 rounded-lg"
-                  style={{ backgroundImage: "url('/images/pattern.png')" }}
+                  className="bg-cover bg-center bg-no-repeat p-8 rounded-[50px] backdrop-blur-[10px]"
+                  style={{
+                    backgroundImage: "url('/images/pattern.png')",
+                    backgroundColor: "#F7F7F7",
+                  }}
                 >
                   <div className="space-y-4">
                     <h3 className="text-[32px] font-bold text-black leading-tight">
@@ -154,8 +157,11 @@ export default function Home() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 1.0 }}
-                  className="bg-cover bg-center bg-no-repeat p-8 rounded-lg"
-                  style={{ backgroundImage: "url('/images/pattern.png')" }}
+                  className="bg-cover bg-center bg-no-repeat p-8 rounded-[50px] backdrop-blur-[10px]"
+                  style={{
+                    backgroundImage: "url('/images/pattern.png')",
+                    backgroundColor: "#F7F7F7",
+                  }}
                 >
                   <div className="space-y-4">
                     <h3 className="text-[32px] font-bold text-black leading-tight">
@@ -185,8 +191,11 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 1.2 }}
-                className="bg-cover bg-center bg-no-repeat p-8 rounded-lg"
-                style={{ backgroundImage: "url('/images/pattern.png')" }}
+                className="bg-cover bg-center bg-no-repeat p-8 rounded-[50px] backdrop-blur-[10px]"
+                style={{
+                  backgroundImage: "url('/images/pattern.png')",
+                  backgroundColor: "#F7F7F7",
+                }}
               >
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                   <div className="space-y-4">
