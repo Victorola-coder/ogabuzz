@@ -185,6 +185,14 @@ export default function DeleteAccount() {
             <p className="text-gray-500 text-xs mt-2">
               Stay Informed, Stay Ahead
             </p>
+            <div className="mt-4">
+              <a
+                href="/delete-account"
+                className="text-[#229EFF] hover:text-[#229EFF]/80 text-sm transition-colors duration-300"
+              >
+                Delete Account
+              </a>
+            </div>
           </div>
         </footer>
       </div>

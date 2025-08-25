@@ -10,7 +10,7 @@ import { AppleIcon, GoogleIcon } from "./components/svgs";
 export default function Home() {
   return (
     <Animation>
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-cyan-50">
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-cyan-50 flex flex-col">
         {/* Header */}
         <header className="px-4 py-6 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -252,6 +252,14 @@ export default function Home() {
             <p className="text-gray-500 text-xs mt-2">
               Stay Informed, Stay Ahead
             </p>
+            <div className="mt-4">
+              <a
+                href="/delete-account"
+                className="text-[#229EFF] hover:text-[#229EFF]/80 text-sm transition-colors duration-300"
+              >
+                Delete Account
+              </a>
+            </div>
           </div>
         </footer>
       </div>
