@@ -252,7 +252,21 @@ export default function Home() {
             <p className="text-gray-500 text-xs mt-2">
               Stay Informed, Stay Ahead
             </p>
-            <div className="mt-4">
+            <div className="mt-4 flex items-center justify-center gap-4">
+              <a
+                href="/privacy-policy"
+                className="text-[#229EFF] hover:text-[#229EFF]/80 text-sm transition-colors duration-300"
+              >
+                Privacy Policy
+              </a>
+              <span className="text-gray-300">|</span>
+              <a
+                href="/terms"
+                className="text-[#229EFF] hover:text-[#229EFF]/80 text-sm transition-colors duration-300"
+              >
+                Terms
+              </a>
+              <span className="text-gray-300">|</span>
               <a
                 href="/delete-account"
                 className="text-[#229EFF] hover:text-[#229EFF]/80 text-sm transition-colors duration-300"
