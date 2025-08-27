@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button, Image } from "../components/ui";
 import { Animation } from "../components/global";
@@ -185,13 +186,27 @@ export default function DeleteAccount() {
             <p className="text-gray-500 text-xs mt-2">
               Stay Informed, Stay Ahead
             </p>
-            <div className="mt-4">
-              <a
+            <div className="mt-4 flex items-center justify-center gap-4">
+              <Link
+                href="/privacy-policy"
+                className="text-[#229EFF] hover:text-[#229EFF]/80 text-sm transition-colors duration-300"
+              >
+                Privacy Policy
+              </Link>
+              <span className="text-gray-300">|</span>
+              <Link
+                href="/terms"
+                className="text-[#229EFF] hover:text-[#229EFF]/80 text-sm transition-colors duration-300"
+              >
+                Terms
+              </Link>
+              <span className="text-gray-300">|</span>
+              <Link
                 href="/delete-account"
                 className="text-[#229EFF] hover:text-[#229EFF]/80 text-sm transition-colors duration-300"
               >
                 Delete Account
-              </a>
+              </Link>
             </div>
           </div>
         </footer>
