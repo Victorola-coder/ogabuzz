@@ -254,7 +254,7 @@ export default function Home() {
             </p>
             <div className="mt-4 flex items-center justify-center gap-4">
               <a
-                href="/privacy-policy"
+                href="/privacy_policy"
                 className="text-[#229EFF] hover:text-[#229EFF]/80 text-sm transition-colors duration-300"
               >
                 Privacy Policy

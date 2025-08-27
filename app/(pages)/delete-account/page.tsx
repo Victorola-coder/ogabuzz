@@ -3,8 +3,8 @@
 import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Button, Image } from "../components/ui";
-import { Animation } from "../components/global";
+import { Button, Image } from "../../components/ui";
+import { Animation } from "../../components/global";
 
 export default function DeleteAccount() {
   return (
@@ -188,7 +188,7 @@ export default function DeleteAccount() {
             </p>
             <div className="mt-4 flex items-center justify-center gap-4">
               <Link
-                href="/privacy-policy"
+                href="/privacy_policy"
                 className="text-[#229EFF] hover:text-[#229EFF]/80 text-sm transition-colors duration-300"
               >
                 Privacy Policy
