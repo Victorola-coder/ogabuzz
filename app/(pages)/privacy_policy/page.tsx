@@ -248,7 +248,7 @@ export default function PrivacyPolicy() {
             <p className="text-gray-500 text-xs mt-2">
               Stay Informed, Stay Ahead
             </p>
-            <div className="mt-4 flex items-center justify-center gap-4">
+            <div className="mt-4 flex items-center justify-center gap-4 flex-wrap">
               <Link
                 href="/privacy_policy"
                 className="text-[#229EFF] hover:text-[#229EFF]/80 text-sm transition-colors duration-300"
@@ -261,6 +261,13 @@ export default function PrivacyPolicy() {
                 className="text-[#229EFF] hover:text-[#229EFF]/80 text-sm transition-colors duration-300"
               >
                 Terms
+              </Link>
+              <span className="text-gray-300">|</span>
+              <Link
+                href="/contact-us"
+                className="text-[#229EFF] hover:text-[#229EFF]/80 text-sm transition-colors duration-300"
+              >
+                Contact Us
               </Link>
               <span className="text-gray-300">|</span>
               <Link

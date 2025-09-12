@@ -1,10 +1,9 @@
 "use client";
 
 import React from "react";
-import { useState } from "react";
-import { Button, Image } from "./components/ui";
 import { motion } from "framer-motion";
 import { Animation } from "./components/global";
+import { Button, Image } from "./components/ui";
 import { AppleIcon, GoogleIcon } from "./components/svgs";
 
 export default function Home() {
@@ -252,7 +251,7 @@ export default function Home() {
             <p className="text-gray-500 text-xs mt-2">
               Stay Informed, Stay Ahead
             </p>
-            <div className="mt-4 flex items-center justify-center gap-4">
+            <div className="mt-4 flex items-center justify-center gap-4 flex-wrap">
               <a
                 href="/privacy_policy"
                 className="text-[#229EFF] hover:text-[#229EFF]/80 text-sm transition-colors duration-300"
@@ -265,6 +264,13 @@ export default function Home() {
                 className="text-[#229EFF] hover:text-[#229EFF]/80 text-sm transition-colors duration-300"
               >
                 Terms
+              </a>
+              <span className="text-gray-300">|</span>
+              <a
+                href="/contact-us"
+                className="text-[#229EFF] hover:text-[#229EFF]/80 text-sm transition-colors duration-300"
+              >
+                Contact Us
               </a>
               <span className="text-gray-300">|</span>
               <a
