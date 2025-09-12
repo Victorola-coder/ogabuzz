@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Animation } from "./components/global";
+import { Animation, Footer } from "./components/global";
 import { Button, Image } from "./components/ui";
 import { AppleIcon, GoogleIcon } from "./components/svgs";
 
@@ -233,55 +233,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        {/* Footer */}
-        <footer className="px-4 py-12 sm:px-6 lg:px-8 bg-gray-50">
-          <div className="max-w-7xl mx-auto text-center">
-            <div className="flex items-center justify-center space-x-2 mb-4">
-              <Image
-                src="/images/logo.png"
-                alt="OgaBuzz"
-                width={32}
-                height={32}
-              />
-              <span className="text-2xl font-bold text-gray-800">OgaBuzz</span>
-            </div>
-            <p className="text-gray-600 text-sm">
-              © {new Date().getFullYear()} OgaBuzz. All rights reserved.
-            </p>
-            <p className="text-gray-500 text-xs mt-2">
-              Stay Informed, Stay Ahead
-            </p>
-            <div className="mt-4 flex items-center justify-center gap-4 flex-wrap">
-              <a
-                href="/privacy_policy"
-                className="text-[#229EFF] hover:text-[#229EFF]/80 text-sm transition-colors duration-300"
-              >
-                Privacy Policy
-              </a>
-              <span className="text-gray-300">|</span>
-              <a
-                href="/terms"
-                className="text-[#229EFF] hover:text-[#229EFF]/80 text-sm transition-colors duration-300"
-              >
-                Terms
-              </a>
-              <span className="text-gray-300">|</span>
-              <a
-                href="/contact-us"
-                className="text-[#229EFF] hover:text-[#229EFF]/80 text-sm transition-colors duration-300"
-              >
-                Contact Us
-              </a>
-              <span className="text-gray-300">|</span>
-              <a
-                href="/delete-account"
-                className="text-[#229EFF] hover:text-[#229EFF]/80 text-sm transition-colors duration-300"
-              >
-                Delete Account
-              </a>
-            </div>
-          </div>
-        </footer>
+        <Footer />
       </div>
     </Animation>
   );
